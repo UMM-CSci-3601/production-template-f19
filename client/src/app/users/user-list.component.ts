@@ -45,7 +45,7 @@ export class UserListComponent implements OnInit {
       if (newUser != null) {
         this.userListService.addNewUser(newUser).subscribe(
           result => {
-            this.highlightedID = { '$oid': result };
+            this.highlightedID = result;
             this.refreshUsers();
           },
           err => {

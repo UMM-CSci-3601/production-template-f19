@@ -55,7 +55,6 @@ public class UserController {
     }
   }
 
-
   /**
    * Helper method which iterates through the collection, receiving all
    * documents if no query parameter is specified. If the age query parameter

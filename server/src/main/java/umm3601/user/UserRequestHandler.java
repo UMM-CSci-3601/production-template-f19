@@ -83,8 +83,6 @@ public class UserRequestHandler {
 
     System.err.println("Adding new user [name=" + name + ", age=" + age + " company=" + company + " email=" + email + ']');
     return userController.addNewUser(name, age, company, email);
-    System.err.println("Adding new user [name=" + name + ", age=" + age + " company=" + company + " email=" + email + ']');
-    return userController.addNewUser(name, age, company, email);
   }
 
   public String getUserSummary(Request request, Response response) {
