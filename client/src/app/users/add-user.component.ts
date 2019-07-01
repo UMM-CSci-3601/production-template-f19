@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {User} from './user';
 import {FormControl, Validators, FormGroup, FormBuilder} from "@angular/forms";
 import {NameValidator} from "./name.validator";
