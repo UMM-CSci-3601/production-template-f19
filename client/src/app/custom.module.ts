@@ -3,11 +3,17 @@ import {CommonModule,} from '@angular/common';
 
 import {CovalentLayoutModule, CovalentStepsModule, CovalentCommonModule /*, any other modules */} from '@covalent/core';
 
-import {
-  MatListModule, MatButtonModule, MatCardModule, MatIconModule,
-  MatInputModule, MatMenuModule, MatSidenavModule, MatToolbarModule,
-  MatExpansionModule, MatTooltipModule, MatDialogModule,
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import {FlexLayoutModule,} from '@angular/flex-layout';
 

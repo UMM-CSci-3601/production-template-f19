@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {UserListService} from './user-list.service';
 import {User} from './user';
-import {Observable} from 'rxjs/Observable';
-import {MatDialog} from '@angular/material';
+import {Observable} from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 import {AddUserComponent} from './add-user.component';
 
 @Component({
