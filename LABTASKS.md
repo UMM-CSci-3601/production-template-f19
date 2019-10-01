@@ -12,7 +12,6 @@ If you're ever confused about what you need to do for a given task, ask.
   - [Exploring the server](#exploring-the-server)
 - [More Todos!](#more-todos)
   - [Writing Todos to the Database](#writing-todos-to-the-database)
-  - [Summary Information About ToDos](#summary-information-about-todos)
   - [Make it pretty](#make-it-pretty)
 - [Remember to test!](#remember-to-test)
   - [Client-side testing](#client-side-testing)
@@ -32,7 +31,9 @@ Answer questions 1-7 in [ANSWERS.md](./ANSWERS.md).
 
 ## More Todos!
 - Re-implement the ToDo API, this time pulling data from MongoDB rather than from a flat JSON file.
-- When displaying the ToDos in your Angular front-end, make thoughtful decisions about whether work like filtering should be done in Angular or via database queries. It would be reasonable, for example, to have the database filter out all the ToDos belonging to a single user, but let Angular filter by category, body, or status. Do at least some filtering on the database side of things.
+- When displaying the ToDos in your Angular front-end, make thoughtful decisions about whether work like filtering 
+should be done in Angular or via database queries. For example, have the database filter out all the ToDos belonging to a single user, 
+but let Angular filter by category, body, or status. Do at least some filtering on the database side of things.
 
 ### Writing Todos to the Database
 - We have included an example of writing to the database with `addUser` functionality. Add to both the front-end and back-end to make it possible to add ToDos so that they appear both in your list and in the database.
@@ -50,7 +51,7 @@ Test, test, and more test! Your project again should have tests. You should cont
 the server-side.
 
 ### Client-side testing
-- The gradle task [_runClientTestsWithCoverage_](./README.md#testing-and-continuous-integration) will be extremely useful to see how covered your client-side is by test.
+- The gradle task [_runClientTestWithCoverage_](./README.md#testing-and-continuous-integration) will be extremely useful to see how covered your client-side is by test.
 
 - Describe your E2E test coverage in a `TESTCOVERAGE.md` file. Update it when you add any additional end-to-end tests.
 
