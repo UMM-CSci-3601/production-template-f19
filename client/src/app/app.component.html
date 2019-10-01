@@ -1,4 +1,11 @@
-<div class="conatiner">
-  <h1>MongoDB Lab</h1>
-  <router-outlet></router-outlet>
-</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>MongoDB Lab</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/'"> Home </a>
+      <a mat-button [routerLink]="'/users'"> Users </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
