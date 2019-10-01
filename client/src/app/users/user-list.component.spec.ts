@@ -64,50 +64,10 @@ describe('User list', () => {
     });
   }));
 
-  it('contains all the users', () => {
-    expect(userList.users.length).toBe(3);
-  });
 
-  it('contains a user named \'Chris\'', () => {
-    expect(userList.users.some((user: User) => user.name === 'Chris')).toBe(true);
-  });
 
-  it('contain a user named \'Jamie\'', () => {
-    expect(userList.users.some((user: User) => user.name === 'Jamie')).toBe(true);
-  });
 
-  it('doesn\'t contain a user named \'Santa\'', () => {
-    expect(userList.users.some((user: User) => user.name === 'Santa')).toBe(false);
-  });
 
-  it('has two users that are 37 years old', () => {
-    expect(userList.users.filter((user: User) => user.age === 37).length).toBe(2);
-  });
-
-  it('user list filters by name', () => {
-    expect(userList.filteredUsers.length).toBe(3);
-    userList.userName = 'a';
-    userList.refreshUsers().subscribe(() => {
-      expect(userList.filteredUsers.length).toBe(2);
-    });
-  });
-
-  it('user list filters by age', () => {
-    expect(userList.filteredUsers.length).toBe(3);
-    userList.userAge = 37;
-    userList.refreshUsers().subscribe(() => {
-      expect(userList.filteredUsers.length).toBe(2);
-    });
-  });
-
-  it('user list filters by name and age', () => {
-    expect(userList.filteredUsers.length).toBe(3);
-    userList.userAge = 37;
-    userList.userName = 'i';
-    userList.refreshUsers().subscribe(() => {
-      expect(userList.filteredUsers.length).toBe(1);
-    });
-  });
 
 });
 
@@ -212,9 +172,10 @@ describe('Adding a user', () => {
     });
   }));
 
-  it('calls UserListService.addUser', () => {
+ /* it('calls UserListService.addUser', () => {
     expect(calledUser).toBeNull();
     userList.openDialog();
     expect(calledUser).toEqual(newUser);
-  });
+  });*/
+
 });

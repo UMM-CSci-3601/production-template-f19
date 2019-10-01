@@ -24,6 +24,29 @@ export class UserListService {
     return this.http.get<User>(this.userUrl + '/' + id);
   }
 
+  public filterUsers(users: User[], searchName: string, searchAge: number): User[] {
+
+    let filteredUsers = users;
+
+    // Filter by name
+    if (searchName != null) {
+      searchName = searchName.toLocaleLowerCase();
+
+      filteredUsers = filteredUsers.filter(user => {
+        return !searchName || user.name.toLowerCase().indexOf(searchName) !== -1;
+      });
+    }
+
+    // Filter by age
+    if (searchAge != null) {
+      filteredUsers = filteredUsers.filter(user => {
+        return !searchAge || user.age == searchAge;
+      });
+    }
+
+    return filteredUsers;
+  }
+
   /*
   //This method looks lovely and is more compact, but it does not clear previous searches appropriately.
   //It might be worth updating it, but it is currently commented out since it is not used (to make that clear)

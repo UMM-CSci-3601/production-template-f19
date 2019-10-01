@@ -127,6 +127,45 @@ describe('User list service: ', () => {
     req.flush(targetUser);
   });
 
+  it('user list filters by name', () => {
+    expect(testUsers.length).toBe(3);
+    let userName = 'a';
+    expect(userListService.filterUsers(testUsers, userName, null).length).toBe(2);
+  });
+
+  it('user list filters by age', () => {
+    expect(testUsers.length).toBe(3);
+    let userAge = 37;
+    expect(userListService.filterUsers(testUsers, null, userAge).length).toBe(2);
+  });
+
+  it('user list filters by name and age', () => {
+    expect(testUsers.length).toBe(3);
+    let userAge = 37;
+    let userName = 'i';
+    expect(userListService.filterUsers(testUsers, userName, userAge).length).toBe(1);
+  });
+
+  it('contains a user named \'Chris\'', () => {
+    expect(testUsers.some((user: User) => user.name === 'Chris')).toBe(true);
+  });
+
+  it('contain a user named \'Jamie\'', () => {
+    expect(testUsers.some((user: User) => user.name === 'Jamie')).toBe(true);
+  });
+
+  it('doesn\'t contain a user named \'Santa\'', () => {
+    expect(testUsers.some((user: User) => user.name === 'Santa')).toBe(false);
+  });
+
+  it('has two users that are 37 years old', () => {
+    expect(testUsers.filter((user: User) => user.age === 37).length).toBe(2);
+  });
+
+  it('contains all the users', () => {
+    expect(testUsers.length).toBe(3);
+  });
+
   it('adding a user calls api/users/new', () => {
     const jesse_id = 'jesse_id';
     const newUser: User = {
@@ -148,4 +187,6 @@ describe('User list service: ', () => {
     expect(req.request.method).toEqual('POST');
     req.flush(jesse_id);
   });
+
+
 });
