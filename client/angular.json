@@ -21,7 +21,6 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "node_modules/@covalent/core/common/platform.scss",
               "src/styles.scss"
             ],
             "scripts": [
@@ -77,7 +76,6 @@
               "node_modules/hammerjs/hammer.min.js"
             ],
             "styles": [
-              "node_modules/@covalent/core/common/platform.scss",
               "src/styles.scss"
             ],
             "assets": [

@@ -1,7 +1,5 @@
 import {NgModule,} from '@angular/core';
-import {CommonModule,} from '@angular/common';
-
-import {CovalentLayoutModule, CovalentStepsModule, CovalentCommonModule /*, any other modules */} from '@covalent/core';
+import {CommonModule} from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -44,25 +42,17 @@ const MATERIAL_MODULES: any[] = [
   MatDialogModule,
 ];
 
-const COVALENT_MODULES: any[] = [
-  CovalentLayoutModule,
-  CovalentStepsModule,
-  CovalentCommonModule,
-];
-
 @NgModule({
   imports: [
     CommonModule,
     ANGULAR_MODULES,
     MATERIAL_MODULES,
-    COVALENT_MODULES,
     FLEX_LAYOUT_MODULES,
   ],
   declarations: [],
   exports: [
     ANGULAR_MODULES,
     MATERIAL_MODULES,
-    COVALENT_MODULES,
     FLEX_LAYOUT_MODULES,
   ]
 })
