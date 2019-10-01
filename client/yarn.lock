@@ -341,13 +341,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@covalent/core@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-2.0.2.tgz#9c4f401d341bf91636a58ff9b9b2e0d05c6e70d0"
-  integrity sha512-b7jni5F2j8EjMWm2JH2IJG8lyvxHo8sw6ZNAYfaMPz68ig2IRQn0dTCDZoLInxepAwYtHeP2M6JhOCK7Opcj0Q==
-  dependencies:
-    tslib "^1.9.0"
-
 "@ngtools/webpack@8.0.6":
   version "8.0.6"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.0.6.tgz#c6b5416710913b24b741a17c8f255e54f42c9abf"
