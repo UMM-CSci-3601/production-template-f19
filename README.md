@@ -1,10 +1,12 @@
-# CSCI 3601 Lab #4 - Mongo, Spark and Angular
+# CSCI 3601 Production Template, F19
 [![Build Status](https://travis-ci.org/UMM-CSci-3601/production-template-f19.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601/production-template-f19)
 
-In this lab, you'll be working to re-implement the ToDo API, this time pulling data from a Mongo Database rather than a flat JSON file. You will also be implementing a new summary API which returns results of processing ToDo data. You will also be implementing a simple client-side application to view this data.
+This is your starter code for Iteration 1.
 
-Your specific tasks for this lab can be found in the [LABTASKS.md][labtasks]
-file in this repository.
+There are a number of pieces in this production template to help you get started.
+As you work on your project, you should replace some of these pieces with 
+elements of your project and remove whatever you don't need (e.g., 
+markdown files, JSON data files, or any remnants of the labs).
 
 <!-- TOC depthFrom:1 depthTo:5 withLinks:1 updateOnSave:1 orderedList:0 -->
 ## Table of Contents
@@ -12,7 +14,7 @@ file in this repository.
 - [Running your project](#running-your-project)
 - [Testing and Continuous Integration](#testing-and-continuous-integration)
 - [Resources](#resources)
-	- [Angular 5](#angular-5)
+	- [Angular](#angular)
 	- [SparkJava](#sparkjava)
 	- [MongoDB](#mongodb)
 
@@ -20,7 +22,7 @@ file in this repository.
 
 ## Setup
 
-As in the previous labs, you'll be using IntelliJ. Once you've all joined your
+As in the labs, you'll be using IntelliJ. Once you've all joined your
 group using GitHub classroom, you can clone your repository using IntelliJ:
 
 - When prompted to create a new IntelliJ project, select **yes**.
@@ -80,12 +82,12 @@ run the `seedMongoDB` task before running the e2e tests!
 Turn on your repo in [Travis CI][travis], replace the build status image in this README, and push your changes. That will trigger a build with Travis.
 
 ## Resources
-### Angular 5
-- [Angular 5 documentation][angular-5]
+### Angular
+- [Angular documentation][angular]
 - [TypeScript documentation][typescript-doc]
 - [What _is_ Angular CLI?][angular-cli]
 - [What are environments in Angular CLI?][environments]
-- [Testing Angular 5 with Karma/Jasmine][angular5-karma-jasmine]
+- [Testing Angular with Karma/Jasmine][angular5-karma-jasmine]
 - [End to end testing (e2e) with protactor and Angular CLI][e2e-testing]
 - [Angular CLI commands](https://github.com/angular/angular-cli/wiki)
 - [Angular Material Design][angular-md]
@@ -99,9 +101,9 @@ Turn on your repo in [Travis CI][travis], replace the build status image in this
 - [Mongo's Java Drivers (Mongo JDBC)][mongo-jdbc]
 
 [angular-md]: https://material.angular.io/
-[angular-cli]: https://cli.angular.io/
+[angular-cli]: https://angular.io/cli
 [typescript-doc]: https://www.typescriptlang.org/docs/home.html
-[angular-5]: https://angular.io/docs
+[angular]: https://angular.io/docs
 [angular5-karma-jasmine]: https://codecraft.tv/courses/angular/unit-testing/jasmine-and-karma/
 [e2e-testing]: https://coryrylan.com/blog/introduction-to-e2e-testing-with-the-angular-cli-and-protractor
 [environments]: http://tattoocoder.com/angular-cli-using-the-environment-option/
@@ -110,5 +112,4 @@ Turn on your repo in [Travis CI][travis], replace the build status image in this
 [status-codes]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 [lab2]: https://github.com/UMM-CSci-3601/3601-lab2_client-server/blob/master/README.md#resources
 [mongo-jdbc]: https://docs.mongodb.com/ecosystem/drivers/java/
-[labtasks]: LABTASKS.md
 [travis]: https://travis-ci.org/

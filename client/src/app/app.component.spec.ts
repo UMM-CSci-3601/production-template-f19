@@ -1,5 +1,4 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 
 import {AppModule} from './app.module';
@@ -30,7 +29,7 @@ describe('AppComponent', () => {
     expect(appFixture).toBeTruthy();
   });
 
-  it(`should have as title 'app'`, () => {
-    expect(appInstance.title).toEqual('Mongo-Angular-Spark lab');
+  it(`should have as title 'Production Template'`, () => {
+    expect(appInstance.title).toEqual('Production Template');
   });
 });
