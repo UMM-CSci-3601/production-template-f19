@@ -4,12 +4,6 @@ plugins {
   id 'com.moowork.node' version '1.2.0'
 }
 
-node {
-  workDir = file("${project.projectDir}/node")
-  yarnWorkDir = file("${project.projectDir}/yarn")
-  nodeModulesDir = file("${project.projectDir}/")
-}
-
 task runClient(type: Exec, dependsOn: yarn_install) {
   group = 'application'
   executable "ng"
