@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 import {User} from './user';
 import {environment} from '../../environments/environment';
@@ -22,6 +22,29 @@ export class UserListService {
 
   getUserById(id: string): Observable<User> {
     return this.http.get<User>(this.userUrl + '/' + id);
+  }
+
+  public filterUsers(users: User[], searchName: string, searchAge: number): User[] {
+
+    let filteredUsers = users;
+
+    // Filter by name
+    if (searchName != null) {
+      searchName = searchName.toLocaleLowerCase();
+
+      filteredUsers = filteredUsers.filter(user => {
+        return !searchName || user.name.toLowerCase().indexOf(searchName) !== -1;
+      });
+    }
+
+    // Filter by age
+    if (searchAge != null) {
+      filteredUsers = filteredUsers.filter(user => {
+        return !searchAge || user.age == searchAge;
+      });
+    }
+
+    return filteredUsers;
   }
 
   /*
