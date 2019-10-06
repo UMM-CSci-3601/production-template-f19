@@ -101,7 +101,7 @@ Turn on your repo in [Travis CI][travis], replace the build status image in this
 - [Mongo's Java Drivers (Mongo JDBC)][mongo-jdbc]
 
 [angular-md]: https://material.angular.io/
-[angular-cli]: https://cli.angular.io/
+[angular-cli]: https://angular.io/cli
 [typescript-doc]: https://www.typescriptlang.org/docs/home.html
 [angular]: https://angular.io/docs
 [angular5-karma-jasmine]: https://codecraft.tv/courses/angular/unit-testing/jasmine-and-karma/
