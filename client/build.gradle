@@ -1,13 +1,7 @@
 // Client side build.gradle
 
 plugins {
-  id 'com.moowork.node' version '1.2.0'
-}
-
-node {
-  workDir = file("${project.projectDir}/node")
-  yarnWorkDir = file("${project.projectDir}/yarn")
-  nodeModulesDir = file("${project.projectDir}/")
+  id 'com.moowork.node' version '1.3.1'
 }
 
 task runClient(type: Exec, dependsOn: yarn_install) {
@@ -16,7 +10,7 @@ task runClient(type: Exec, dependsOn: yarn_install) {
   args = ["serve"]
 }
 
-task runClientTestsAndWatch(type: NpmTask) {
+task runClientTestsAndWatch(type: NpmTask, dependsOn: yarn_install) {
   group = 'application'
   description = "Start client side tests, watching and updating when there are changes"
   args = ['run', 'test-watch']
@@ -25,15 +19,17 @@ task runClientTestsAndWatch(type: NpmTask) {
 task runClientTestWithCoverage(type: Exec, dependsOn: yarn_install) {
   group = 'application'
   executable "ng"
-  args = ["test", "-sm=false", "--watch=false", "--code-coverage"]
+  args = ["test", "--watch=false", "--code-coverage"]
 }
 
-task runE2ETests(type: Exec) {
+task runE2ETests(type: Exec, dependsOn: yarn_install) {
   group = 'application'
   executable "ng"
   args = ["e2e"]
 }
 
-task runClientTests(dependsOn: yarn_run_test) {
+task runClientTests(type: Exec, dependsOn: yarn_install) {
   group = 'application'
+  executable = "ng"
+  args = ["test", "--watch=false"]
 }
