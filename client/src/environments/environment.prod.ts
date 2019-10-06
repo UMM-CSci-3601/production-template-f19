@@ -1,5 +1,8 @@
 export const environment = {
   envName: 'prod',
   production: true,
-  API_URL: 'http://your.domainname.com/api/'
+  // You need to replace the IP address below with the
+  // IP address of your droplet, which you can get
+  // from the Digital Ocean dashboard.
+  API_URL: 'http://aaa.bbb.ccc.ddd:4567/api/'
 };
