@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {UserListService} from './user-list.service';
 import {User} from './user';
-import {Observable} from 'rxjs/Observable';
-import {MatDialog} from '@angular/material';
+import {Observable} from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 import {AddUserComponent} from './add-user.component';
 
 @Component({
@@ -58,27 +58,23 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  public filterUsers(searchName: string, searchAge: number): User[] {
+  public updateName(newName: string): void {
+    this.userName = newName;
+    this.updateFilter();
+  }
 
-    this.filteredUsers = this.users;
+  public updateAge(newAge:number): void {
+    this.userAge = newAge;
+    this.updateFilter();
+  }
 
-    // Filter by name
-    if (searchName != null) {
-      searchName = searchName.toLocaleLowerCase();
-
-      this.filteredUsers = this.filteredUsers.filter(user => {
-        return !searchName || user.name.toLowerCase().indexOf(searchName) !== -1;
-      });
-    }
-
-    // Filter by age
-    if (searchAge != null) {
-      this.filteredUsers = this.filteredUsers.filter(user => {
-        return !searchAge || user.age == searchAge;
-      });
-    }
-
-    return this.filteredUsers;
+  public updateFilter() {
+    this.filteredUsers =
+      this.userListService.filterUsers(
+        this.users,
+        this.userName,
+        this.userAge
+      );
   }
 
   /**
@@ -96,7 +92,7 @@ export class UserListComponent implements OnInit {
     users.subscribe(
       users => {
         this.users = users;
-        this.filterUsers(this.userName, this.userAge);
+        this.updateFilter();
       },
       err => {
         console.log(err);

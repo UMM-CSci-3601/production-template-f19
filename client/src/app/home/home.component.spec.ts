@@ -3,7 +3,6 @@ import {HomeComponent} from './home.component';
 import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
 import {CustomModule} from '../custom.module';
-import {MATERIAL_COMPATIBILITY_MODE} from '@angular/material';
 
 describe('Home', () => {
 
@@ -16,20 +15,19 @@ describe('Home', () => {
     TestBed.configureTestingModule({
       imports: [CustomModule],
       declarations: [HomeComponent], // declare the test component
-      providers: [{provide: MATERIAL_COMPATIBILITY_MODE, useValue: true}],
     });
 
     fixture = TestBed.createComponent(HomeComponent);
 
     component = fixture.componentInstance; // BannerComponent test instance
 
-    // query for the title <h1> by CSS element selector
-    de = fixture.debugElement.query(By.css('#hello-world'));
+    // query for the link (<a> tag) by CSS element selector
+    de = fixture.debugElement.query(By.css('#home-page-card'));
     el = de.nativeElement;
   });
 
-  it('displays a greeting', () => {
+  it('displays a link to users', () => {
     fixture.detectChanges();
-    expect(el.textContent).toContain(component.text);
+    expect(el.textContent).toContain("This is a home page! It doesn't do anything!");
   });
 });
