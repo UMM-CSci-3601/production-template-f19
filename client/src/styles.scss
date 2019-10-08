@@ -1,9 +1,14 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @import '../node_modules/@angular/material/theming';
+
+// General themes for across the app and those that need access to theming go here
+// Styles that affect only things in an individual component should go in that component's scss/css file.
+// For more information about Angular Material theming: https://material.angular.io/guide/theming
+
 
 // The theme.scss file contains variables for theme colors, this allows you to use them in other scss files across the project
 @import 'theme';
+
+
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -12,14 +17,15 @@
 
 
 // This is to be able to theme parts of the app dynamically depending on theme (right now: light or dark)
+// You can put styles in this mixin and the theme variables will refer to the actual theme being used (light or dark)
 @mixin app-theming($theme) {
   // Extract the palettes you need from the theme definition.
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
-
-  $foreground: map-get($theme, foreground);
+  $warn: map-get($theme, warn);
 
   $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
 
   $is-dark: map-get($theme, is-dark);
 
@@ -48,10 +54,10 @@
 }
 
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+// Sets up the theming for built in material components with the light theme
 @include angular-material-theme($light-theme);
+
+// Sets up theming for our custom components with the light theme
 @include app-theming($light-theme);
 
 html, body { height: 100%; }
@@ -62,6 +68,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // If you don't want to apply dark theme automatically,
 // you can also make this a normal class and add it to body or html dynamically.
 @media (prefers-color-scheme: dark) {
+  // Sets up the theming for built in material components with the light theme
   @include angular-material-theme($dark-theme);
+  // Sets up theming for our custom components with the light theme
   @include app-theming($dark-theme);
 }
