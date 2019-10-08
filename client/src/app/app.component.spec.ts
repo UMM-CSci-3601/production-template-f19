@@ -29,7 +29,4 @@ describe('AppComponent', () => {
     expect(appFixture).toBeTruthy();
   });
 
-  it(`should have as title 'Production Template'`, () => {
-    expect(appInstance.title).toEqual('Production Template');
-  });
 });
